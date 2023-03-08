@@ -15,6 +15,7 @@ from .load import load_pipeline
 
 @click.group()
 def cli():
+    print('Yes')
     pass
 
 
