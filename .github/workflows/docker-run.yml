@@ -14,5 +14,5 @@ jobs:
     - name: Run the Docker container
       run: docker compose up -d
     - name: Take pipelines logs
-      run: docker compose logs pipelines
+      run: docker-compose logs pipelines
       
