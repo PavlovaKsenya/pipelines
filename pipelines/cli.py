@@ -1,16 +1,6 @@
 import click
 
-from . import tasks
-from .core import Pipeline
 from .load import load_pipeline
-
-
-# TASKS = [
-#     tasks.CopyToFile(table='data', output_file='data.csv'),
-#     tasks.RunSQL(sql_query='select 1;', title="Useless SQL query"),
-# ]
-#
-# pipeline = Pipeline(tasks=TASKS)
 
 
 @click.group()
