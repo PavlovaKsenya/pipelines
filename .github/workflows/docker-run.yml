@@ -12,7 +12,7 @@ jobs:
     - name: Build the Docker image
       run: docker compose build
     - name: Run the Docker container
-      run: docker compose build
+      run: docker compose up -d
     - name: Take pipelines logs
-      run: docker-compose logs pipelines
+      run: docker compose logs pipelines
       
