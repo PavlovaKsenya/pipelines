@@ -6,7 +6,7 @@ VERSION = '2023'
 
 
 TASKS = [
-    tasks.LoadFile(input_file='data/original.csv', table='original'),
+    tasks.LoadFile(input_file='example_pipeline/data/original.csv', table='original'),
     tasks.CTAS(
         table='norm',
         sql_query='''
@@ -16,7 +16,7 @@ TASKS = [
     ),
     tasks.CopyToFile(
         table='norm',
-        output_file='data/norm.csv',
+        output_file='example_pipeline/data/norm.csv',
     ),
 
     # clean up:

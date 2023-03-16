@@ -1,0 +1,24 @@
+version: '3.1'
+
+services:
+  db:
+    build: ./db/
+    restart: always
+    ports:
+      - "5432:5432"
+    container_name: db
+
+  pipelines:
+    build: ./
+    ports:
+      - "80:80"
+    container_name: pipelines
+    depends_on:
+      - db
+    environment:
+      - POSTGRES_HOST=db
+      - POSTGRES_DB=pipelines
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=1234
+    volumes:
+      - ./example_pipeline/original/original.csv:/pipelines/example_pipeline/original/original.csv

@@ -2,16 +2,20 @@ import psycopg2
 from psycopg2 import Error
 from .utils import print_error
 import sys
+import os
+from dotenv import load_dotenv
 
 
 class PostrgesDB:
     def __init__(self):
         try:
-            self.connection = psycopg2.connect(user="postgres",
-                                  password="1234",
-                                  host="localhost",
+            load_dotenv()
+
+            self.connection = psycopg2.connect(user='postgres',
+                                  password='1234',
+                                  host="db",
                                   port="5432",
-                                  database="pipelines")
+                                  database='pipelines')
             self.connection.autocommit = True
             self.cursor = self.connection.cursor()
         except (Exception, Error) as error:

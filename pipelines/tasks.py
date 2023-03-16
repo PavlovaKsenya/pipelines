@@ -29,7 +29,6 @@ class LoadFile(BaseTask):
 
     def run(self):
         db.run_query(f"CREATE TABLE IF NOT EXISTS {self.table} (id SERIAL PRIMARY KEY, name varchar, url varchar)")
-
         db.load_data_to_table(self.input_file, self.table)
 
         print(f"Load file `{self.input_file}` to table `{self.table}`")

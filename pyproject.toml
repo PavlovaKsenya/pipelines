@@ -10,10 +10,11 @@ python = "^3.9"
 click = "^8.1.3"
 pathlib = "^1.0.1"
 psycopg2 = "^2.9.5"
+python-dotenv = "^1.0.0"
 
 
 [tool.poetry.scripts]
-pipeline = 'pipelines.cli:cli'
+pipelines = 'pipelines.cli:cli'
 
 [build-system]
 requires = ["poetry-core"]
