@@ -9,10 +9,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - name: Build the Docker container
+    - name: Build the Docker image
       run: docker compose build
     - name: Run the Docker container
       run: docker compose build
     - name: Take pipelines logs
-      run: docker compose logs pipelines
+      run: docker-compose logs pipelines
       
