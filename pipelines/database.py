@@ -2,15 +2,11 @@ import psycopg2
 from psycopg2 import Error
 from .utils import print_error
 import sys
-import os
-from dotenv import load_dotenv
 
 
 class PostrgesDB:
     def __init__(self):
         try:
-            load_dotenv()
-
             self.connection = psycopg2.connect(user='postgres',
                                   password='1234',
                                   host="db",
